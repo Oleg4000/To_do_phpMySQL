@@ -88,27 +88,29 @@ $sub_but = date("Y-m-d");
     <h2>Дотати завдання</h2>
     <form action="todo_car_db.php" method="post">
     <input type="hidden" name="id_task" value="<?= $item[0] ?>">
-        <p>Місто</p>
+        <p><span>Місто</span></p>
         <input type="text" name="city">
-        <p>Компанія</p>
+        <p><span>Компанія</span></p>
         <input type="text" name="company">
-        <p>Адреса</p>
+        <p><span>Адреса</span></p>
         <input type="text" name="adress">
-        <p>Хто призначив </p>
+        <p><span>Хто призначив </span></p>
         <input type="text" name="who">
-        <p>Опис завдання</p>
+        <p><span>Опис завдання</span></p>
         <textarea type="text" name="task"></textarea>
-        <p>Розмір об'єкту</p>
+        <p><span>Розмір об'єкту</span></p>
         <input type="text" name="priority">
-        <p>Пріоритет</p>
+        <p><span>Пріоритет</span></p>
         <input type="text" name="object_size">
-        <p>Що зробити</p>
+        <p><span>Що зробити</span></p>
         <input type="text" name="take_or_away">
-        <p>Дата початку</p>
+        <p><span>Дата початку</span></p>
         <input type="date" name="date_start">
-        <p>Дата закінчення</p>
+        <p><span>Дата закінчення</span></p>
         <input type="date" name="date_end">
         <button type="submit">Додати завдання</button>
+        <button id="add-button" style="background-color: blue; color: white; padding: 10px;">+Add</button>
+
 
     </form>
 </body>

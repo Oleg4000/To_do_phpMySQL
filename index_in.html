@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="todo_car2.css">
+    <link rel="js" type="/todo_car.js">
+    <!--  <link rel="style_tab"href="/bootstrap-5.2.2/scss/_tables.scss"> -->
+    <title>To_do_car</title>
+</head>
+
+<body>
+    <table>
+        <tr>
+            <th>id</th>
+            <th>Місто</th>
+            <th>Компанія</th>
+            <th>Адреса</th>
+            <th>Хто призначив</th>
+            <th>Опис завдання</th>
+            <th>Розмір обєкта</th>
+            <th>Пріоритет</th>
+            <th>&hArr;</th>
+            <th>Дата початку</th>
+            <th>Дата закінчення</th>
+            <th>Виконано</th>
+            <th>&#10004;</th>
+        </tr>
+        <?php
+            foreach ($todo_car as $item) {
+            ?>
+        <tr>
+            <td>
+                <?= $item[0] ?>
+            </td> <!--id -->
+            <td>
+                <?= $item[1] ?>
+            </td> <!--Місто -->
+            <td>
+                <?= $item[2] ?>
+            </td> <!--Компанія-->
+            <td>
+                <?= $item[3] ?>
+            </td> <!--Адреса-->
+            <td>
+                <?= $item[4] ?>
+            </td> <!--Хто призначив-->
+            <td>
+                <?= $item[5] ?>
+            </td> <!--Опис завдання -->
+            <td>
+                <?= $item[6] ?>
+            </td>
+            <td>
+                <?= $item[7] ?>
+            </td>
+            <td>
+                <?= $item[8] ?>
+            </td>
+            <td>
+                <?= $item[9] ?>
+            </td>
+            <td>
+                <?= $item[10] ?>
+            </td>
+            <td>
+                <?= $item[11] ?>
+            </td>
+            <td><a href="todo_car_sabmit.php?id=<?=$item[0]?>">&#9745;</a></td>
+        </tr>
+        <?php
+            }
+            ?>
+    </table>
+
+
+    <h2>Дотати завдання</h2>
+
+    <form action="todo_car_db.php" method="post">
+        <div class="group">
+            <input type="hidden" name="id_task" value="<?= $item[0] ?>">
+            <p>Місто</p>
+            <input type="text" name="city" class="input">
+            <p>Компанія</p>
+            <input type="text" name="company" class="input">
+            <p>Адреса</p>
+            <input type="text" name="adress" class="input">
+            <p>Хто призначив </p>
+            <input type="text" name="who" class="input">
+            <p>Опис завдання</p>
+            <textarea type="text" name="task" class="input"></textarea>
+            <p>Розмір об'єкту</p>
+            <input type="text" name="priority" class="input">
+            <p>Пріоритет</p>
+            <input type="text" name="object_size" class="input">
+            <p>Що зробити</p>
+            <input type="text" name="take_or_away" class="input">
+            <p>Дата початку</p>
+            <input type="date" name="date_start" class="input">
+            <p>Дата закінчення</p>
+            <input type="date" name="date_end" class="input">
+            <button type="submit">Додати завдання</button>
+        </div>
+    </form>
+    <form action="todo_car_db.php" method="post">
+        <div class="group">
+            <div> 
+                <input required="" type="text" class="input" name="city">
+                <span class="highlight"></span>
+                <span class="bar"></span>
+                <label>Місто</label>
+            </div>
+            <div> 
+                <input required="" type="text" class="input">
+                <span class="highlight"></span>
+                <span class="bar"></span>
+                <label>Компанія</label>
+            </div>
+            <div> 
+                <input required="" type="text" class="input">
+                <span class="highlight"></span>
+                <span class="bar"></span>
+                <label>Адреса</label>
+            </div>
+            <div> 
+                <input required="" type="text" class="input">
+                <span class="highlight"></span>
+                <span class="bar"></span>
+                <label>Хто призначив</label>
+            </div>
+            <div> 
+                <input required="" type="text" class="input">
+                <span class="highlight"></span>
+                <span class="bar"></span>
+                <label>Що зробити</label>
+            </div>
+            <div> 
+                <input required="" type="text" class="input">
+                <span class="highlight"></span>
+                <span class="bar"></span>
+                <label>Що зробити</label>
+            </div>
+            <div> 
+                <input required="" type="text" class="input">
+                <span class="highlight"></span>
+                <span class="bar"></span>
+                <label>Дата початку</label>
+            </div>
+            <div> 
+                <input required="" type="text" class="input">
+                <span class="highlight"></span>
+                <span class="bar"></span>
+                <label>Дата закінчення</label>
+            </div>
+        </div>
+    </form>
+</body>
+
+
+</html>

@@ -1,6 +1,6 @@
 <?php
 require_once './todo_config.php';
-//print_r($_POST);
+print_r($_POST);
 
 $city = $_POST['city'];
 $company=$_POST['company'];
