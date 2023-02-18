@@ -1,6 +1,6 @@
 <?php
-require_once "/todo_config.php";
-$todo_car = mysqli_query($connect, "SELECT * FROM `to_do_car`");
+require_once "./todo_config.php";
+$todo_car = mysqli_query($connect, "SELECT * FROM `todo_car`");
 $todo_car = mysqli_fetch_all($todo_car);
 //var_dump($todo_car);
 //echo($todo_car)
@@ -77,7 +77,7 @@ $sub_but = date("Y-m-d");
                     <td><?= $item[9] ?></td> 
                     <td><?= $item[10] ?></td> 
                     <td><?= $item[11] ?></td> 
-                    <td><a href='todo_car_sabmit.php?id=<?= $item[0] ?>'>&#9745;</a></td>
+                    <td><a href='todo_car_sabmit.php'>&#9745;</a></td>
                 </tr>
             <?php
             }
@@ -87,17 +87,29 @@ $sub_but = date("Y-m-d");
     </div>
     <h2>Дотати завдання</h2>
     <form action="todo_car_db.php" method="post">
+    <input type="hidden" name="id_task" value="<?= $item[0] ?>">
         <p>Місто</p>
         <input type="text" name="city">
+        <p>Компанія</p>
+        <input type="text" name="company">
+        <p>Адреса</p>
+        <input type="text" name="adress">
         <p>Хто призначив </p>
         <input type="text" name="who">
         <p>Опис завдання</p>
         <textarea type="text" name="task"></textarea>
+        <p>Розмір об'єкту</p>
+        <input type="text" name="priority">
+        <p>Пріоритет</p>
+        <input type="text" name="object_size">
+        <p>Що зробити</p>
+        <input type="text" name="take_or_away">
         <p>Дата початку</p>
         <input type="date" name="date_start">
         <p>Дата закінчення</p>
         <input type="date" name="date_end">
         <button type="submit">Додати завдання</button>
+
     </form>
 </body>
 
