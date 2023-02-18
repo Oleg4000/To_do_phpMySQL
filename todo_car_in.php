@@ -109,7 +109,7 @@ $sub_but = date("Y-m-d");
         <p><span>Дата закінчення</span></p>
         <input type="date" name="date_end">
         <button type="submit">Додати завдання</button>
-        <button id="add-button" style="background-color: blue; color: white; padding: 10px;">+Add</button>
+        
 
 
     </form>
