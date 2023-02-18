@@ -77,7 +77,7 @@ $sub_but = date("Y-m-d");
                     <td><?= $item[9] ?></td> 
                     <td><?= $item[10] ?></td> 
                     <td><?= $item[11] ?></td> 
-                    <td><a href='todo_car_sabmit.php'>&#9745;</a></td>
+                    <td><a href="todo_car_sabmit.php?id=<?=$item[0]?>">&#9745;</a></td>
                 </tr>
             <?php
             }
