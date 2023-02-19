@@ -2,32 +2,6 @@
 require_once "./todo_config.php";
 $todo_car = mysqli_query($connect, "SELECT * FROM `todo_car`");
 $todo_car = mysqli_fetch_all($todo_car);
-//var_dump($todo_car);
-//echo($todo_car)
-
-
-//connection
-
-//Post
-
-/*  $city = $_POST['city'];
-    $who = $_POST['who'];
-    $task = $_POST['task'];
-    $date_start = $_POST['date_start'];
-    $date_end = $_POST['date_end'];
-    mysqli_query($connect, "INSERT INTO to_do_car (`id`, `city`,`who`,`task`,`date_start`,`date_end`,`submit`) VALUES (NULL,'$city','$who','$task','$date_start','$date_end',NULL)");
- */
-//submitted date checkbox
-/* $city = $_POST['city'];
-$who = $_POST['who'];
-$task = $_POST['task'];
-$date_start = $_POST['date_start'];
-$date_end = $_POST['date_end'];
-$id=$_POST['id'];
-mysqli_query($connect, "UPDATE `to_do_car` SET `who` = '$who', `task` = '$task', `date_start` = '$date_start', `date_end` = '$date_end', `submit`='$sub_but' WHERE `to_do_car`.`id` =$id ");
- */
-
-$sub_but = date("Y-m-d");
 ?>
 
 <!DOCTYPE html>
@@ -44,6 +18,16 @@ $sub_but = date("Y-m-d");
 </head>
 
 <body>
+
+    <form action="select.php" method="POST">
+        <label for="fromDate">Дата від:</label>
+        <input type="date" id="fromDate" name="fromDate">
+        <label for="toDate">Дата до:</label>
+        <input type="date" id="toDate" name="toDate">
+        <button type="submit">Пошук</button>
+    </form>
+
+
     <div class="scroll-table">
         <table>
             <tr>
@@ -71,23 +55,22 @@ $sub_but = date("Y-m-d");
                     <td><?= $item[3] ?></td> <!--Адреса-->
                     <td><?= $item[4] ?></td> <!--Хто призначив-->
                     <td><?= $item[5] ?></td> <!--Опис завдання -->
-                    <td><?= $item[6] ?></td> 
-                    <td><?= $item[7] ?></td> 
-                    <td><?= $item[8] ?></td> 
-                    <td><?= $item[9] ?></td> 
-                    <td><?= $item[10] ?></td> 
-                    <td><?= $item[11] ?></td> 
-                    <td><a href="todo_car_sabmit.php?id=<?=$item[0]?>">&#9745;</a></td>
+                    <td><?= $item[6] ?></td>
+                    <td><?= $item[7] ?></td>
+                    <td><?= $item[8] ?></td>
+                    <td><?= $item[9] ?></td>
+                    <td><?= $item[10] ?></td>
+                    <td><?= $item[11] ?></td>
+                    <td><a href="todo_car_sabmit.php?id=<?= $item[0] ?>">&#9745;</a></td>
                 </tr>
             <?php
             }
             ?>
         </table>
-
     </div>
     <h2>Дотати завдання</h2>
     <form action="todo_car_db.php" method="post">
-    <input type="hidden" name="id_task" value="<?= $item[0] ?>">
+        <input type="hidden" name="id_task" value="<?= $item[0] ?>">
         <p><span>Місто</span></p>
         <input type="text" name="city">
         <p><span>Компанія</span></p>
@@ -109,10 +92,8 @@ $sub_but = date("Y-m-d");
         <p><span>Дата закінчення</span></p>
         <input type="date" name="date_end">
         <button type="submit">Додати завдання</button>
-        
-
-
     </form>
+
 </body>
 
 

@@ -1,22 +1,26 @@
-// Отримуємо кнопку з HTML
-const addButton = document.getElementById('add-button');
+// Отримуємо форму за допомогою id
+var form = document.getElementById("myForm");
 
-// Додаємо обробник події для кнопки
-addButton.addEventListener('click', () => {
-  // Створюємо новий об'єкт XMLHttpRequest
-  const xhr = new XMLHttpRequest();
+// Додаємо обробник подій на подію submit
+form.addEventListener("submit", function (event) {
+  // Забороняємо стандартну поведінку форми
+  event.preventDefault();
 
-  // Встановлюємо метод запиту та URL
-  xhr.open('POST', '/update-data.php');
+  // Отримуємо дані форми
+  var formData = new FormData(form);
 
-  // Встановлюємо заголовок запиту для передачі даних у форматі JSON
-  xhr.setRequestHeader('Content-Type', 'application/json');
+  // Створюємо XMLHttpRequest об'єкт
+  var xhr = new XMLHttpRequest();
 
-  // Створюємо об'єкт даних, який містить поточну дату
-  const data = {
-    submit_date: new Date().toISOString()
-  };
+  // Встановлюємо метод та адресу запиту
+  xhr.open("POST", "todo_car_db.php");
 
-  // Відправляємо запит на сервер з даними у форматі JSON
-  xhr.send(JSON.stringify(data));
+  // Встановлюємо обробник подій для завершення запиту
+  xhr.addEventListener("load", function () {
+    // Виводимо результат в консоль
+    console.log(xhr.responseText);
+  });
+
+  // Відправляємо дані форми на сервер
+  xhr.send(formData);
 });
