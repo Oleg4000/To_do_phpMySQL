@@ -82,9 +82,9 @@ $todo_car = mysqli_fetch_all($todo_car);
         <p><span>Опис завдання</span></p>
         <textarea type="text" name="task"></textarea>
         <p><span>Розмір об'єкту</span></p>
-        <input type="text" name="priority">
-        <p><span>Пріоритет</span></p>
         <input type="text" name="object_size">
+        <p><span>Пріоритет</span></p>
+        <input type="text" name="priority">
         <p><span>Що зробити</span></p>
         <input type="text" name="take_or_away">
         <p><span>Дата початку</span></p>
