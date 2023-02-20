@@ -13,7 +13,7 @@ $toDate = $_POST['toDate'];
 $sql = ("SELECT * FROM todo_car WHERE date_start >= '$fromDate' AND date_end <= '$toDate'");
 
 // Виконання запиту до бази даних
-$result = $conn->query($sql);
+$result = $connect->query($sql);
 
 // Вивід результатів запиту
 if ($result->num_rows > 0) {
@@ -30,4 +30,4 @@ if ($result->num_rows > 0) {
 }
 
 // Закриття підключення до бази даних
-$conn->close();
+$connect->close();
