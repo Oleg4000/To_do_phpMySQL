@@ -44,6 +44,8 @@ $todo_car = mysqli_fetch_all($todo_car);
                 <th>Дата закінчення</th>
                 <th>Виконано</th>
                 <th>&#10004;</th>
+                <th>&#9746;</th>
+
             </tr>
             <?php
             foreach ($todo_car as $item) {
@@ -62,6 +64,7 @@ $todo_car = mysqli_fetch_all($todo_car);
                     <td><?= $item[10] ?></td>
                     <td><?= $item[11] ?></td>
                     <td><a href="todo_car_sabmit.php?id=<?= $item[0] ?>">&#9745;</a></td>
+                    <td><a href="todo_car_delete.php?id=<?= $item[0] ?>">&#9746;</a></td>
                 </tr>
             <?php
             }
