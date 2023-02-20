@@ -45,6 +45,7 @@ $todo_car = mysqli_fetch_all($todo_car);
                 <th>Виконано</th>
                 <th>&#10004;</th>
                 <th>&#9746;</th>
+                <th>&#9998;</th>
 
             </tr>
             <?php
@@ -65,12 +66,13 @@ $todo_car = mysqli_fetch_all($todo_car);
                     <td><?= $item[11] ?></td>
                     <td><a href="todo_car_sabmit.php?id=<?= $item[0] ?>">&#9745;</a></td>
                     <td><a href="todo_car_delete.php?id=<?= $item[0] ?>">&#9746;</a></td>
+                    <td><a href="todo_car_moificate.php?id=<?= $item[0] ?>"></a><button id="btn_edit">&#9998;</button></td>
                 </tr>
             <?php
             }
             ?>
         </table>
-    </div>
+    </div><button></button>
     <h2>Дотати завдання</h2>
     <form action="todo_car_db.php" method="post">
         <input type="hidden" name="id_task" value="<?= $item[0] ?>">
@@ -96,7 +98,6 @@ $todo_car = mysqli_fetch_all($todo_car);
         <input type="date" name="date_end">
         <button type="submit">Додати завдання</button>
     </form>
-
 </body>
 
 
