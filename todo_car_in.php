@@ -20,11 +20,20 @@ $todo_car = mysqli_fetch_all($todo_car);
 <body>
 
     <form action="select.php" method="POST">
-        <label for="fromDate">Дата від:</label>
+        <!-- <label for="fromDate">Дата від:</label>
         <input type="date" id="fromDate" name="fromDate">
         <label for="toDate">Дата до:</label>
         <input type="date" id="toDate" name="toDate">
-        <button type="submit">Пошук</button>
+        <button type="submit">Пошук</button> -->
+        <div class="input-field">
+            <label for="fromDate">Дата початку</label>
+            <input type="date" id="fromDate" name="fromDate" />
+        </div>
+        <div class="input-field">
+            <label for="toDate">Дата закінчення</label>
+            <input type="date" id="toDate" name="toDate" />
+        </div>
+        <button type="submit" id="#btn_find">Пошук</button>
     </form>
 
 
@@ -72,31 +81,53 @@ $todo_car = mysqli_fetch_all($todo_car);
             }
             ?>
         </table>
-    </div><button></button>
+    </div>
+
     <h2>Дотати завдання</h2>
-    <form action="todo_car_db.php" method="post">
+    <form action="todo_car_db.php" method="POST">
         <input type="hidden" name="id_task" value="<?= $item[0] ?>">
-        <p><span>Місто</span></p>
-        <input type="text" name="city">
-        <p><span>Компанія</span></p>
-        <input type="text" name="company">
-        <p><span>Адреса</span></p>
-        <input type="text" name="adress">
-        <p><span>Хто призначив </span></p>
-        <input type="text" name="who">
-        <p><span>Опис завдання</span></p>
-        <textarea type="text" name="task"></textarea>
-        <p><span>Розмір об'єкту</span></p>
-        <input type="text" name="object_size">
-        <p><span>Пріоритет</span></p>
-        <input type="text" name="priority">
-        <p><span>Що зробити</span></p>
-        <input type="text" name="take_or_away">
-        <p><span>Дата початку</span></p>
-        <input type="date" name="date_start">
-        <p><span>Дата закінчення</span></p>
-        <input type="date" name="date_end">
-        <button type="submit">Додати завдання</button>
+        <div class="input-container">
+            <div class="input-field">
+                <label for="city">Місто:</label>
+                <input type="text" id="city" name="city" />
+            </div>
+            <div class="input-field">
+                <label for="company">Компанія</label>
+                <input type="text" id="company" name="company" />
+            </div>
+            <div class="input-field">
+                <label for="adress">Адреса</label>
+                <input type="text" id="adress" name="adress" />
+            </div>
+            <div class="input-field">
+                <label for="who">Хто призначив</label>
+                <input type="text" id="who" name="who" />
+            </div>
+            <div class="input-field">
+                <label for="task">Опис завдання</label>
+                <input type="text" id="task" name="task" />
+            </div>
+            <div class="input-field">
+                <label for="object_size">Розмір об'єкту</label>
+                <input type="text" id="object_size" name="object_size" />
+            </div>
+            <div class="input-field">
+                <label for="priority">Пріоритет</label>
+                <input type="text" id="priority" name="priority" />
+            </div>
+            <div class="input-field">
+                <label for="take_or_away">Що зробити</label>
+                <input type="text" id="take_or_away" name="take_or_away" />
+            </div>
+            <div class="input-field">
+                <label for="date_start">Дата початку</label>
+                <input type="date" id="date_start" name="date_start" />
+            </div>
+            <div class="input-field">
+                <label for="date_end">Дата закінчення</label>
+                <input type="date" id="date_end" name="date_end" />
+            </div>
+            <button type="submit" id="btn2">Додати завдання</button>
     </form>
 </body>
 

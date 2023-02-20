@@ -12,7 +12,7 @@
     <button id="editBtn">Редагувати</button>
 
     <div id="editForm" class="modal">
-        <h2>Змінити завдання</h2>
+        <h2>Редагувати завдання</h2>
         <form id="editTaskForm" action="edit.php" method="POST">
             <input type="hidden" name="id_task" value="<?= $item[0] ?>">
             <p><span>Місто</span></p>

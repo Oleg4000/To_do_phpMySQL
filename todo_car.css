@@ -1,5 +1,71 @@
-table{
+table {
+  width: 100%;
+  border-collapse: collapse;
   font-family: sans-serif;
+  
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  background: #eee;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+@media screen and (max-width: 768px) {
+  /* Змінюємо розташування колонок на маленьких екранах */
+  table, thead, tbody, th, td, tr {
+    display: block;
+  }
+
+  th {
+    text-align: left;
+  }
+
+  /* Сховуємо значки виконання, видалення та редагування на маленьких екранах */
+  td:nth-child(8), td:nth-child(9), td:nth-child(10) {
+    display: none;
+  }
+
+  /* Змінюємо розмір шрифту на маленьких екранах */
+  td, th {
+    font-size: 12px;
+  }
+
+  /* Використовуємо flexbox для розташування елементів в ряд */
+  tbody tr {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+
+  /* Змінюємо розташування значка виконання на маленьких екранах */
+  tbody tr td:nth-child(7) {
+    order: 1;
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  /* Змінюємо розташування значок видалення та редагування на маленьких екранах */
+  tbody tr td:nth-child(11) {
+    order: 2;
+  }
+
+  tbody tr td:nth-child(12) {
+    order: 3;
+  }
+}
+/*TABLE*/
+/* html {
+  box-sizing: border-box;
+}
+table{
+  font-family: sans-serif;+
   box-sizing: border-box;
 }
 th, td {
@@ -7,7 +73,7 @@ th, td {
   padding: 10px;
 }
 th {
-  background:#42a5f5;/*#555; /*#e3f2fd;*/
+  background:#42a5f5;
   color: #fff;
 }
 td {
@@ -16,7 +82,7 @@ td {
 a {
   text-decoration: none;
   transition: 0.2s ease;
-  color: #42a5f5; /*#3f75c5;*/
+  color: #42a5f5; 
 }
 td:nth-child(7) > a {
   color: #c22a2a;
@@ -43,9 +109,9 @@ button {
   font-weight: bold;
   cursor: pointer;
 } 
-
+ */
 /*FORM1*/
-form {
+/* form {
   display: flex;
   flex-wrap: wrap;
 }
@@ -90,4 +156,46 @@ form button {
   form input[type="date"] {
       max-width: 300px;
   }
+} */
+
+.input-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
+
+.input-field {
+  width: 23%;
+  margin-bottom: 20px;
+}
+
+.input-field label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.input-field input[type="text"] {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+#btn2 {
+  margin: 10px 0;
+  padding: 10px 20px;
+  border: none;
+  background-color: #42a5f5;
+  color: white;
+  font-size: 1rem;
+} 
+#btn_find {
+  margin: 10px 0;
+  padding: 10px 20px;
+  border: none;
+  background-color: #42a5f5;
+  color: white;
+  font-size: 1rem;
+} 
+
