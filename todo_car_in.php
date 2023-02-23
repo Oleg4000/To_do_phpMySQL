@@ -12,8 +12,7 @@ $todo_car = mysqli_fetch_all($todo_car);
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="todo_car.css">
-    <link rel="js" type="/todo_car.js">
-    <!--  <link rel="style_tab"href="/bootstrap-5.2.2/scss/_tables.scss"> -->
+    <script src="todo_car.js"></script>
     <title>To_do_car</title>
 </head>
 
@@ -33,7 +32,7 @@ $todo_car = mysqli_fetch_all($todo_car);
             <label for="toDate">Дата закінчення</label>
             <input type="date" id="toDate" name="toDate" />
         </div>
-        <button type="submit" id="#btn_find">Пошук</button>
+        <button type="submit" id="btn_find">Пошук</button>
     </form>
 
 
@@ -73,9 +72,9 @@ $todo_car = mysqli_fetch_all($todo_car);
                     <td><?= $item[9] ?></td>
                     <td><?= $item[10] ?></td>
                     <td><?= $item[11] ?></td>
-                    <td><a href="todo_car_sabmit.php?id=<?= $item[0] ?>">&#9745;</a></td>
-                    <td><a href="todo_car_delete.php?id=<?= $item[0] ?>">&#9746;</a></td>
-                    <td><a href="todo_car_moificate.php?id=<?= $item[0] ?>"></a><button id="btn_edit">&#9998;</button></td>
+                    <td><a href="todo_car_sabmit.php?id=<?= $item[0] ?>"><button id="btn_edit">&#9745;</button></a></td>
+                    <td><a href="todo_car_delete.php?id=<?= $item[0] ?>"><button id="btn_edit">&#9746;</button></a></td>
+                    <td><a href="todo_car_moificate.php?id=<?= $item[0] ?>"><button id="btn_edit">&#9998;</button></a></td>
                 </tr>
             <?php
             }
@@ -129,6 +128,7 @@ $todo_car = mysqli_fetch_all($todo_car);
             </div>
             <button type="submit" id="btn2">Додати завдання</button>
     </form>
+
 </body>
 
 
