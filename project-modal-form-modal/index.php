@@ -23,7 +23,7 @@
 
   <div class="modal modal1">
     <div class="modal__main">
-      <h2 class="modal__title">Модальное окно</h2>
+      <h2 class="modal__title">Модальне вікно</h2>
 
       <!-- <div class="modal__container">
         <p>Сделаем правильно</p>

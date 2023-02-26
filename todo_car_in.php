@@ -12,18 +12,13 @@ $todo_car = mysqli_fetch_all($todo_car);
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="todo_car.css">
-    <script src="todo_car.js"></script>
+    <script src="todo_modal_modificate.js"></script>
     <title>To_do_car</title>
 </head>
 
 <body>
 
     <form action="select.php" method="POST">
-        <!-- <label for="fromDate">Дата від:</label>
-        <input type="date" id="fromDate" name="fromDate">
-        <label for="toDate">Дата до:</label>
-        <input type="date" id="toDate" name="toDate">
-        <button type="submit">Пошук</button> -->
         <div class="input-field">
             <label for="fromDate">Дата початку</label>
             <input type="date" id="fromDate" name="fromDate" />

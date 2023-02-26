@@ -1,5 +1,79 @@
+* {
+  font-family: sans-serif;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+th/* , td */ {
+  border: 1px solid #ddd;
+  padding: 8px;
+  /* background: #eee; */
+  background: #42a5f5;
+  color: #fff;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+@media screen and (max-width: 768px) {
+  /* Змінюємо розташування колонок на маленьких екранах */
+  table,
+  thead,
+  tbody,
+  th,
+  td,
+  tr {
+    display: block;
+  }
+
+  th {
+    text-align: left;
+  }
+
+  /* Сховуємо значки виконання, видалення та редагування на маленьких екранах */
+  td:nth-child(8),
+  td:nth-child(9),
+  td:nth-child(10) {
+    display: none;
+  }
+
+  /* Змінюємо розмір шрифту на маленьких екранах */
+  td,
+  th {
+    font-size: 12px;
+  }
+
+  /* Використовуємо flexbox для розташування елементів в ряд */
+  tbody tr {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+
+  /* Змінюємо розташування значка виконання на маленьких екранах */
+  tbody tr td:nth-child(7) {
+    order: 1;
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  /* Змінюємо розташування значок видалення та редагування на маленьких екранах */
+  tbody tr td:nth-child(11) {
+    order: 2;
+  }
+
+  tbody tr td:nth-child(12) {
+    order: 3;
+  }
+}
+/*Прокрутка таблиці*/
 .scroll-table {
   max-height: 500px; /* Максимальна висота контейнера */
+  max-width: 95%;
   margin: 0 auto; /* Центруємо контейнер */
   overflow-y: auto; /* Додаємо прокрутку відносно осі Y */
   background-color: rgba(255, 255, 255, 0.7); /* Прозорий фон контейнера */
@@ -10,7 +84,9 @@
 .scroll-table table {
   margin: 0 auto; /* Центруємо таблицю */
 }
-
+table td:nth-child(6) {
+  width: 200px;
+}
 /* Не змінюємо ширину колонки "Опис завдання" на малих екранах */
 @media screen and (max-width: 768px) {
   td:nth-child(6) {
@@ -19,104 +95,7 @@
   }
 }
 
-/*TABLE*/
-/* html {
-  box-sizing: border-box;
-}
-table{
-  font-family: sans-serif;+
-  box-sizing: border-box;
-}
-th, td {
-  font-size: 18px;
-  padding: 10px;
-}
-th {
-  background:#42a5f5;
-  color: #fff;
-}
-td {
-  background: #eee;
-}
-a {
-  text-decoration: none;
-  transition: 0.2s ease;
-  color: #42a5f5; 
-}
-td:nth-child(7) > a {
-  color: #c22a2a;
-}
-a:hover {
-  opacity: 0.7;
-}
-p {
-  font-style: Noto Sans;
-}
-input, textarea, button {
-  padding: 10px;
-  display: block;
-  min-height: 30px;
-  width: 250px;
-  margin-bottom: 10px;
-}
-textarea {
-  resize: vertical;
-  height: 80px;
-}
-button {
-  text-transform: uppercase;
-  font-weight: bold;
-  cursor: pointer;
-} 
- */
-/*FORM1*/
-/* form {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-form p, form input, form textarea {
-  width: 100%;
-  max-width: 400px;
-
-}
-
-form input[type="date"] {
-  width: auto;
-  max-width: 200px;
-}
-
-form p {
-  margin: 10px 0;
-}
-
-form input, form textarea {
-  font-size: 1rem;
-  padding: 10px;
-  border: none;
-  border-bottom: 2px solid #ccc;
-
-}
-
-form button {
-  margin: 10px 0;
-  padding: 10px 20px;
-  border: none;
-  background-color: #42a5f5;
-  color: white;
-  font-size: 1rem;
-} 
-
-@media (min-width: 768px) {
-  form p, form input, form textarea {
-      width: 50%;
-  }
-
-  form input[type="date"] {
-      max-width: 300px;
-  }
-} */
-
+/*Input area*/
 .input-container {
   display: flex;
   flex-wrap: wrap;
@@ -142,7 +121,8 @@ form button {
   box-sizing: border-box;
 }
 .input-field input[type="date"] {
-  width: 100%;
+  width: 195px;
+  height: 35px;
   padding: 8px;
   border: 1px solid #ccc;
   border-radius: 15px;
@@ -167,7 +147,7 @@ form button {
   border-radius: 15px;
 }
 
-/*Кнопки в  таблтці*/
+/*Кнопки в  таблиці*/
 button {
   font-size: 15px;
   position: relative;
@@ -207,4 +187,48 @@ button:hover .border {
 .full-rounded {
   border-radius: 2em;
 }
-/*Поля вводу дати*/
+
+/*add task form*/
+.container_task {
+  display: block;
+  width: 1400px;
+  height: 700px;
+}
+/*Modal form*/
+/* Стиль модального вікна */
+.modal {
+  display: none; /* Приховуємо модальне вікно за замовчуванням */
+  position: fixed; /* Фіксуємо модальне вікно на екрані */
+  z-index: 1; /* Робимо модальне вікно поверх інших елементів */
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto; /* Дозволяємо прокрутку, якщо контент занадто великий */
+  background-color: rgba(0, 0, 0, 0.4); /* Створюємо півпрозорий фон */
+}
+
+/* Стиль модального вікна (вміст) */
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% відступу від верхньої частини екрана та центруємо вікно */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Ширина вікна */
+}
+
+/* Стиль для кнопки закриття модального вікна */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+/* Стиль для кнопки закриття модального вікна при наведенні */
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
