@@ -9,11 +9,12 @@ $who = $_POST['who'];
 $task = $_POST['task'];
 $priority = $_POST['priority'];
 $object_size = $_POST['object_size'];
+$object_weight = $_POST['object_weight'];
 $take_or_away = $_POST['take_or_away'];
 $date_start = $_POST['date_start'];
 $date_end = $_POST['date_end'];
 
-mysqli_query($connect, "INSERT INTO todo_car (`id_task`, `city`, `company`, `adress`, `who`, `task`, `priority`, `object_size`,`take_or_away`, `date_start`, `date_end`, `submit_date`) VALUES (NULL,'$city','$company','$adress','$who','$task','$priority','$object_size','$take_or_away','$date_start','$date_end',NULL)");
+mysqli_query($connect, "INSERT INTO to_do_car (`id`, `city`, `company`, `adress`, `who`, `task`, `priority`, `object_size`,`object_weight`,`take_or_away`, `date_start`, `date_end`, `submit_date`) VALUES (NULL,'$city','$company','$adress','$who','$task','$priority','$object_size','$object_weight','$take_or_away','$date_start','$date_end',NULL)");
 header('location: todo_car_in.php');
 
 

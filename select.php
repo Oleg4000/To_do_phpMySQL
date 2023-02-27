@@ -10,7 +10,7 @@ $toDate = $_POST['toDate'];
 //$q = mysqli_query($connect, "SELECT * FROM `todo_car` WHERE `date_start` = '$fromDate' AND `date_end` = '$toDate'");
 
 // Запит до бази даних
-$sql = ("SELECT * FROM todo_car WHERE date_start >= '$fromDate' AND date_end <= '$toDate'");
+$sql = ("SELECT * FROM to_do_car WHERE date_start >= '$fromDate' AND date_end <= '$toDate'");
 
 // Виконання запиту до бази даних
 $result = $connect->query($sql);
@@ -31,3 +31,17 @@ if ($result->num_rows > 0) {
 
 // Закриття підключення до бази даних
 $connect->close();
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="todo_car.css">
+    <title>Document</title>
+</head>
+<body>
+<a href="./todo_car_in.php"><button>На головну</button></a>
+</body>
+</html>
