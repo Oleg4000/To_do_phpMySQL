@@ -2,7 +2,7 @@
 include_once "../findId.php";
 include_once "../userhost.php";
 require_once "./todo_config.php";
-$todo_car = mysqli_query($connect, "SELECT * FROM `to_do_car`");
+$todo_car = mysqli_query($connect, "SELECT `id`, `city`, `company`, `adress`, `who`, `task`, `object_size`, `object_weight`, `priority`, `take_or_away`, `date_start`, `date_end`, `submit_date` FROM `to_do_car` WHERE submit_date IS NULL");
 $todo_car = mysqli_fetch_all($todo_car);
 ?>
 
@@ -56,8 +56,7 @@ $todo_car = mysqli_fetch_all($todo_car);
                 <th>&#10004;</th>
                 <th>&#9746;</th>
                 <th>&#9998;</th>
-
-            </tr>
+                </tr>
             <?php
             foreach ($todo_car as $item) {
             ?>
@@ -78,6 +77,7 @@ $todo_car = mysqli_fetch_all($todo_car);
                     <td><a href="todo_car_sabmit.php?id=<?= $item[0] ?>"><button id="sabmit">&#9745;</button></a></td>
                     <td><a href="todo_car_delete.php?id=<?= $item[0] ?>"><button id="delete">&#9746;</button></a></td>
                     <td><a href="todo_car_edit.php?id=<?= $item[0] ?>"><button id="openEditFormBtn">&#9998;</button></a></td>
+                    
                 </tr>
             <?php
             }
@@ -135,8 +135,9 @@ $todo_car = mysqli_fetch_all($todo_car);
             </div>
             <button type="submit" id="btn2">Додати завдання</button>
     </form>
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d20744.090613643544!2d24.1336363!3d49.46540065!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x473a8a194b572bd9%3A0xf9968e25ca493ed9!2sPodorozhnyk!5e0!3m2!1sen!2sua!4v1677499933574!5m2!1sen!2sua" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-</body>
+    <!-- <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d20744.090613643544!2d24.1336363!3d49.46540065!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x473a8a194b572bd9%3A0xf9968e25ca493ed9!2sPodorozhnyk!5e0!3m2!1sen!2sua!4v1677499933574!5m2!1sen!2sua" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe> -->
+    
+    </body>
 
 
 </html>

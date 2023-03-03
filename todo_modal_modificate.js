@@ -20,7 +20,7 @@ var span = document.getElementsByClassName("modal-close")[0]; */
   }
 }
  */
-// отримуємо необхідні елементи зі сторінки
+/* отримуємо необхідні елементи зі сторінки
 const modalWrapper = document.querySelector('.modal-wrapper');
 const openEditFormBtn = document.querySelector('#openEditFormBtn');
 const closeEditFormBtn = document.querySelector('#closeEditFormBtn');
@@ -33,4 +33,4 @@ openEditFormBtn.addEventListener('click', function() {
 // закриття модального вікна
 closeEditFormBtn.addEventListener('click', function() {
   modalWrapper.style.display = 'none';
-});
+});*/
