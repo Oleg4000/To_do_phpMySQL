@@ -5,9 +5,15 @@ include_once "../userhost.php";
 print_r($_GET);
 $id_task = $_GET['id'];
 
+//отримую те що писав юзер в завданні
 $car_edit = mysqli_query($connect, "SELECT * FROM `to_do_car` WHERE `id`='$id_task'");
 $car_edit = mysqli_fetch_assoc($car_edit);
 print_r($car_edit);
+//отримую email
+$get_email = mysqli_query($connect, "SELECT `email`  FROM `user` WHERE `id` = '$iduser'");
+
+$get_email = mysqli_fetch_assoc($get_email);
+print_r($get_email);
 ?>
 
 <!DOCTYPE html>

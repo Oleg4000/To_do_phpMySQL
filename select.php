@@ -67,5 +67,6 @@ $connect->close();
 </head>
 <body>
 <a href="./todo_car_in.php"><button>На головну</button></a>
+<button>Завантажити звіт</button>
 </body>
 </html>

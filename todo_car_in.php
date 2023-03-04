@@ -4,6 +4,7 @@ include_once "../userhost.php";
 require_once "./todo_config.php";
 $todo_car = mysqli_query($connect, "SELECT `id`, `city`, `company`, `adress`, `who`, `task`, `object_size`, `object_weight`, `priority`, `take_or_away`, `date_start`, `date_end`, `submit_date` FROM `to_do_car` WHERE submit_date IS NULL");
 $todo_car = mysqli_fetch_all($todo_car);
+
 ?>
 
 <!DOCTYPE html>
@@ -91,47 +92,47 @@ $todo_car = mysqli_fetch_all($todo_car);
         <div class="input-container">
             <div class="input-field">
                 <label for="city">Місто:</label>
-                <input type="text" id="city" name="city" />
+                <input type="text" id="city" name="city" required/>
             </div>
             <div class="input-field">
                 <label for="company">Компанія</label>
-                <input type="text" id="company" name="company" />
+                <input type="text" id="company" name="company" required/>
             </div>
             <div class="input-field">
                 <label for="adress">Адреса</label>
-                <input type="text" id="adress" name="adress" />
+                <input type="text" id="adress" name="adress" required/>
             </div>
             <div class="input-field">
                 <label for="who">Хто призначив</label>
-                <input type="text" id="who" name="who" value="<? echo $username ?>" />
+                <input type="text" id="who" name="who" value="<? echo $username //userhost.php ?>" required/>
             </div>
             <div class="input-field">
                 <label for="task">Опис завдання</label>
-                <input type="text" id="task" name="task" />
+                <input type="text" id="task" name="task" required />
             </div>
             <div class="input-field">
                 <label for="object_size">Розмір об'єкта (ширина-висота)</label>
-                <input type="text" id="object_size" name="object_size" />
+                <input type="text" id="object_size" name="object_size" required/>
             </div>
             <div class="input-field">
                 <label for="object_weight">Вага об'єкту в кг</label>
-                <input type="text" id="object_weight" name="object_weight" />
+                <input type="text" id="object_weight" name="object_weight" required/>
             </div>
             <div class="input-field">
                 <label for="priority">Пріоритет</label>
-                <input type="text" id="priority" name="priority" />
+                <input type="text" id="priority" name="priority" required/>
             </div>
             <div class="input-field">
                 <label for="take_or_away">Що зробити</label>
-                <input type="text" id="take_or_away" name="take_or_away" />
+                <input type="text" id="take_or_away" name="take_or_away" required/>
             </div>
             <div class="input-field">
                 <label for="date_start">Дата початку</label>
-                <input type="date" id="date_start" name="date_start" />
+                <input type="date" id="date_start" name="date_start" required/>
             </div>
             <div class="input-field">
                 <label for="date_end">Дата закінчення</label>
-                <input type="date" id="date_end" name="date_end" />
+                <input type="date" id="date_end" name="date_end" required/>
             </div>
             <button type="submit" id="btn2">Додати завдання</button>
     </form>

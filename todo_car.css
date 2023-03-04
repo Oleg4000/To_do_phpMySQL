@@ -13,7 +13,7 @@ th/* , td */ {
   color: #fff;
   
 }
-/*Фіксація імен колонок при прокрутці*/
+/*Фіксація імен колонок в таблиці при прокрутці*/
 th {
   position: sticky;
   top: 0;
@@ -145,7 +145,7 @@ table td:nth-child(6) {
 }
 #btn_find {
   margin: 10px 0;
-  padding: 10px 20px;
+  padding: 10px 10px;
   border: none;
   background-color: #42a5f5;
   color: white;

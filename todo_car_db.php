@@ -1,5 +1,7 @@
 <?php
 require_once './todo_config.php';
+include_once "../findId.php";
+include_once "../userhost.php";
 print_r($_POST);
 
 $city = $_POST['city'];
@@ -14,23 +16,14 @@ $take_or_away = $_POST['take_or_away'];
 $date_start = $_POST['date_start'];
 $date_end = $_POST['date_end'];
 
-mysqli_query($connect, "INSERT INTO to_do_car (`id`, `city`, `company`, `adress`, `who`, `task`, `priority`, `object_size`,`object_weight`,`take_or_away`, `date_start`, `date_end`, `submit_date`) VALUES (NULL,'$city','$company','$adress','$who','$task','$priority','$object_size','$object_weight','$take_or_away','$date_start','$date_end',NULL)");
+mysqli_query($connect, "INSERT INTO to_do_car 
+(`id`, `city`, `company`, `adress`, `who`, `task`, `priority`, `object_size`,`object_weight`,`take_or_away`, `date_start`, `date_end`, `submit_date`)
+VALUES (NULL,'$city','$company','$adress','$who','$task','$priority','$object_size','$object_weight','$take_or_away','$date_start','$date_end',NULL)");
+
+
+//mail_create_send
+$get_email = mysqli_query($connect, "SELECT `name`,`email`  FROM `user` WHERE `id` = '$iduser'");
+print_r($get_email);
 header('location: todo_car_in.php');
-
-
-
-//INSERT INTO `todo_car` (`id_task`, `city`, `company`, `adress`, `who`, `task`, `object_size`, `priority`, `take_or_away`, `date_start`, `date_end`, `submit_date`)
-// $q="INSERT INTO to_do_car (`id`, `city`,`who`,`task`,`date_start`,`date_end`,`submit`) VALUES (NULL,'$city','$who','$task','$date_start','$date_end',NULL)";
-// $result = $connect->query($q);
-// $strInitiatorList = '';
-// if ($result) {
-//     $result->free();
-//     $jsonResult['EmailReciepients'] = array('result' => 'location:todo_car_in.php');
-//     header('location:todo_car_in.php');
-// } else {
-//     $jsonResult['EmailReciepients'] = array('error' => "MySQL error: $query<br>" . $db->error);
-// }
-// echo json_encode($jsonResult);
-// die();
-
-//submitted date checkbox
+//SELECT `name`,`email`  FROM `user` WHERE `id` = 250;
+?>
